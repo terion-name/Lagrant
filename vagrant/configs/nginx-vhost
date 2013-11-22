@@ -1,0 +1,27 @@
+server {
+
+        sendfile off;
+
+        server_name _;
+
+        root /var/www/public;
+
+        index index.php index.html;
+
+        if (!-d $request_filename) {
+                rewrite ^/(.+)/$ /$1 permanent;
+        }
+
+        location / {
+                try_files $uri $uri/ /index.php?q=$uri&$args;
+        }
+
+        error_page 404 /index.php;
+
+        location ~ \.php$ {
+                fastcgi_pass unix:/var/run/php5-fpm.sock;
+                fastcgi_index index.php;
+                fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+                include fastcgi_params;
+        }
+}
