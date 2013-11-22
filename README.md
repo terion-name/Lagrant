@@ -3,5 +3,5 @@ Lagrant
 
 Boilerplate Laravel Vagrant config with autosetup
 
-DRAFT! NOT TESTED YET!
+DRAFT! NOT WORKING YET!
 =======

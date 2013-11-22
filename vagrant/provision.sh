@@ -28,6 +28,8 @@ echo "--- Setting up system ---"
 
 ./scripts/php.sh
 
+./scripts/nginx.sh
+
 ./scripts/gmagick.sh
 
 ./scripts/xdebug.sh
