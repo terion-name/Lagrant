@@ -40,16 +40,16 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     #####################
 
     #laravel-specific mounts - storage
-    #config.vm.synced_folder "./app/storage", "/vagrant/app/storage", id: "vagrant-storage",
-    #    :owner => "vagrant",
-    #    :group => "www-data",
-    #    :mount_options => ["dmode=775","fmode=664"]
+    config.vm.synced_folder "./app/storage", "/vagrant/app/storage", id: "vagrant-storage",
+        :owner => "vagrant",
+        :group => "www-data",
+        :mount_options => ["dmode=775","fmode=664"]
 
     #laravel-specific mounts - public
-    #config.vm.synced_folder "./public", "/vagrant/public", id: "vagrant-public",
-    #    :owner => "vagrant",
-    #    :group => "www-data",
-    #    :mount_options => ["dmode=775","fmode=664"]
+    config.vm.synced_folder "./public", "/vagrant/public", id: "vagrant-public",
+        :owner => "vagrant",
+        :group => "www-data",
+        :mount_options => ["dmode=775","fmode=664"]
 
     config.vm.provision :shell do |shell|
         shell.path = "vagrant/provision.sh"
