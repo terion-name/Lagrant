@@ -1,7 +1,5 @@
 server {
 
-        user vagrant www-data
-
         sendfile off;
 
         server_name _;
