@@ -13,48 +13,52 @@
 # DART
 # apache
 
-DATABASE_TYPE = $1
-DATABASE_ROOT_PASSWORD = $2
-DATABASE_NAME = $3
+SCRIPTS=/vagrant/vagrant/scripts
+
+DATABASE_TYPE=$1
+DATABASE_ROOT_PASSWORD=$2
+DATABASE_NAME=$3
 
 echo "--- Setting up system ---"
 
-./scripts/init.sh
+${SCRIPTS}/init.sh
 
-./scripts/php.sh
+${SCRIPTS}/php.sh
 
-./scripts/${DATABASE_TYPE}.sh $DATABASE_ROOT_PASSWORD
+${SCRIPTS}/${DATABASE_TYPE}.sh $DATABASE_ROOT_PASSWORD
 
-./scripts/redis.sh
+${SCRIPTS}/redis.sh
 
-./scripts/mongodb.sh
+${SCRIPTS}/mongodb.sh
 
-./scripts/nodejs.sh
+${SCRIPTS}/nodejs.sh
 
-./scripts/nginx.sh
+${SCRIPTS}/nginx.sh
 
-./scripts/gmagick.sh
+${SCRIPTS}/gmagick.sh
 
-./scripts/xdebug.sh
+${SCRIPTS}/xdebug.sh
 
-./scripts/phpunit.sh
+${SCRIPTS}/phpunit.sh
 
-./scripts/composer.sh
+${SCRIPTS}/composer.sh
 
-./scripts/documentroot.sh
+${SCRIPTS}/documentroot.sh
 
-./scripts/nginxsetup.sh
+${SCRIPTS}/nginxsetup.sh
 
-if [ $DATABASE_NAME != _null ]; then
-./scripts/mysql_create.sh $DATABASE_NAME $DATABASE_ROOT_PASSWORD
+if [ $DATABASE_NAME != "_null" ];
+then
+    ${SCRIPTS}/mysql_create.sh $DATABASE_NAME $DATABASE_ROOT_PASSWORD
 fi
 
-# We assume that if there is no composer.json — it is raw new project
-# Otherwise — project already exists and we need to migrate it
+# We assume that if there is no composer.json it is raw new project
+# Otherwise project already exists and we need to migrate it
 
-if [ ! -f /vagrant/composer.json ]; then
-./scripts/laravel_create.sh
-./scripts/laravel_dev_packages.sh
+if [ ! -a "/vagrant/composer.json" ];
+then
+    ${SCRIPTS}/laravel_create.sh
+    ${SCRIPTS}/laravel_dev_packages.sh
 else
-./scripts/laravel_migrate.sh
+    ${SCRIPTS}/laravel_migrate.sh
 fi
