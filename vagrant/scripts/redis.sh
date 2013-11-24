@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-echo "--- Installing Redis ---"
+echo -n "--- Installing Redis ---"
 sudo apt-get install -y redis-server

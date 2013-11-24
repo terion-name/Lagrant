@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 # TODO!
-# pass DB creation parameters... from where?
 # mariadb
 # postgresql
 # xhprof
@@ -14,19 +13,23 @@
 # DART
 # apache
 
+DATABASE_TYPE = $1
+DATABASE_ROOT_PASSWORD = $2
+DATABASE_NAME = $3
+
 echo "--- Setting up system ---"
 
 ./scripts/init.sh
 
-./scripts/mysql.sh $MYSQL_ROOT_PASSWORD
+./scripts/php.sh
+
+./scripts/${DATABASE_TYPE}.sh $DATABASE_ROOT_PASSWORD
 
 ./scripts/redis.sh
 
 ./scripts/mongodb.sh
 
 ./scripts/nodejs.sh
-
-./scripts/php.sh
 
 ./scripts/nginx.sh
 
@@ -42,7 +45,9 @@ echo "--- Setting up system ---"
 
 ./scripts/nginxsetup.sh
 
-./scripts/mysql_create.sh $DBNAME $MYSQL_ROOT_PASSWORD
+if [ $DATABASE_NAME != _null ]; then
+./scripts/mysql_create.sh $DATABASE_NAME $DATABASE_ROOT_PASSWORD
+fi
 
 # We assume that if there is no composer.json — it is raw new project
 # Otherwise — project already exists and we need to migrate it

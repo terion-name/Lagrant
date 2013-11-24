@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo "--- Instaling MySQL ---"
+echo -n "--- Instaling MySQL ---"
 
 MYSQL_PASSWORD = $1
 

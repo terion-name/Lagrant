@@ -4,8 +4,22 @@
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = "2"
 
-DB = true
-DBNAME = 'database'
+###########################
+# Database configuratiion #
+###########################
+
+# What DB server we should install?
+DATABASE_TYPE = 'mysql'
+DATABASE_ROOT_PASSWORD = 'root'
+
+# Should we create a database for this app?
+DATABASE_CREATE = true
+DATABASE_NAME = 'database'
+
+
+#########################
+# Vagrant configuration #
+#########################
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
@@ -19,21 +33,26 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     config.vm.synced_folder "./", "/vagrant", id: "vagrant-root", :owner => "vagrant", :group => "www-data"
 
+
+    #####################
+    # Laravel mountings #
+    #####################
+
     #laravel-specific mounts - storage
-    config.vm.synced_folder "./app/storage", "/vagrant/app/storage", id: "vagrant-storage",
-        :owner => "vagrant",
-        :group => "www-data",
-        :mount_options => ["dmode=775","fmode=664"]
+    #config.vm.synced_folder "./app/storage", "/vagrant/app/storage", id: "vagrant-storage",
+    #    :owner => "vagrant",
+    #    :group => "www-data",
+    #    :mount_options => ["dmode=775","fmode=664"]
 
     #laravel-specific mounts - public
-    config.vm.synced_folder "./public", "/vagrant/public", id: "vagrant-public",
-        :owner => "vagrant",
-        :group => "www-data",
-        :mount_options => ["dmode=775","fmode=664"]
+    #config.vm.synced_folder "./public", "/vagrant/public", id: "vagrant-public",
+    #    :owner => "vagrant",
+    #    :group => "www-data",
+    #    :mount_options => ["dmode=775","fmode=664"]
 
     config.vm.provision :shell do |shell|
         shell.path = "vagrant/provision.sh"
-        shell.args = DB ? "db " + DBNAME : ""
+        shell.args = DATABASE_TYPE + " " + DATABASE_ROOT_PASSWORD + ( DATABASE_CREATE ? (" " + DATABASE_NAME) : " _null" )
     end
 
     # If true, then any SSH connections made will enable agent forwarding.
