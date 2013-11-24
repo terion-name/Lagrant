@@ -14,6 +14,7 @@
 # apache
 
 SCRIPTS=/vagrant/vagrant/scripts
+PROJECT_PATH=/vagrant
 
 DATABASE_TYPE=$1
 DATABASE_ROOT_PASSWORD=$2
@@ -56,8 +57,8 @@ fi
 
 if [ ! -a "/vagrant/composer.json" ];
 then
-    ${SCRIPTS}/laravel_create.sh
-    ${SCRIPTS}/laravel_dev_packages.sh
+    ${SCRIPTS}/laravel_create.sh $PROJECT_PATH
+    ${SCRIPTS}/laravel_dev_packages.sh $PROJECT_PATH
 else
-    ${SCRIPTS}/laravel_migrate.sh
+    ${SCRIPTS}/laravel_migrate.sh $PROJECT_PATH
 fi
