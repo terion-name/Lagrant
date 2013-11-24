@@ -2,11 +2,11 @@
 
 echo "--- Updating packages list ---"
 
-# deb http://packages.dotdeb.org wheezy all
-# deb-src http://packages.dotdeb.org wheezy all
+# echo "deb http://packages.dotdeb.org wheezy all" >> /etc/apt/sources.list
+# echo "deb-src http://packages.dotdeb.org wheezy all" >> /etc/apt/sources.list
 
-deb http://packages.dotdeb.org wheezy-php55 all
-deb-src http://packages.dotdeb.org wheezy-php55 all
+echo "deb http://packages.dotdeb.org wheezy-php55 all" >> /etc/apt/sources.list
+echo "deb-src http://packages.dotdeb.org wheezy-php55 all" >> /etc/apt/sources.list
 
 wget http://www.dotdeb.org/dotdeb.gpg
 sudo apt-key add dotdeb.gpg
