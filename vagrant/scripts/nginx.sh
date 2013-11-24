@@ -3,7 +3,7 @@
 # SHOULD BE RUN AFTER PHP INSTALL
 
 echo "--- Installing NGINX ---"
-sudo apt-get install -y nginx php-fpm
+sudo apt-get install -y php-fpm nginx
 
 echo "--- Turn error reporting on ---"
 sed -i "s/error_reporting = .*/error_reporting = E_ALL/" /etc/php5/fpm/php.ini
