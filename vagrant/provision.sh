@@ -25,6 +25,11 @@ ${SCRIPTS}/init.sh
 
 ${SCRIPTS}/php.sh
 
+# web server MUST be installed immediately after PHP
+${SCRIPTS}/nginx.sh
+
+${SCRIPTS}/documentroot.sh
+
 ${SCRIPTS}/${DATABASE_TYPE}.sh $DATABASE_ROOT_PASSWORD
 
 ${SCRIPTS}/redis.sh
@@ -33,8 +38,6 @@ ${SCRIPTS}/mongodb.sh
 
 ${SCRIPTS}/nodejs.sh
 
-${SCRIPTS}/nginx.sh
-
 ${SCRIPTS}/gmagick.sh
 
 ${SCRIPTS}/xdebug.sh
@@ -42,10 +45,6 @@ ${SCRIPTS}/xdebug.sh
 ${SCRIPTS}/phpunit.sh
 
 ${SCRIPTS}/composer.sh
-
-${SCRIPTS}/documentroot.sh
-
-${SCRIPTS}/nginxsetup.sh
 
 if [ $DATABASE_NAME != "_null" ];
 then
