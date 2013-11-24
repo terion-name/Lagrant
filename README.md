@@ -3,5 +3,5 @@ Lagrant
 
 Boilerplate Laravel Vagrant config with autosetup
 
-DRAFT! NOT WORKING YET!
+Status: 95% of minimum pack ready
 =======
