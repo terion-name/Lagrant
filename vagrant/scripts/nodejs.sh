@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo -n "--- Installing NodeJS ---"
+echo "--- Installing NodeJS ---"
 sudo add-apt-repository -y ppa:chris-lea/node.js
 sudo apt-get update
 sudo apt-get install nodejs
