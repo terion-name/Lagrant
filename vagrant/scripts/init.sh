@@ -2,17 +2,6 @@
 
 echo "--- Updating packages list ---"
 
-# For some specific packages you may add dotdeb repo
-
-# sudo sh -c 'echo "deb http://packages.dotdeb.org wheezy all" >> /etc/apt/sources.list'
-# sudo sh -c 'echo "deb-src http://packages.dotdeb.org wheezy all" >> /etc/apt/sources.list'
-
-# sudo sh -c 'echo "deb http://packages.dotdeb.org wheezy-php55 all" >> /etc/apt/sources.list'
-# sudo sh -c 'echo "deb-src http://packages.dotdeb.org wheezy-php55 all" >> /etc/apt/sources.list'
-
-# wget http://www.dotdeb.org/dotdeb.gpg
-# sudo apt-key add dotdeb.gpg
-
 sudo apt-get update
 
 echo "--- Installing base packages ---"
