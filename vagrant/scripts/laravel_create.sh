@@ -9,5 +9,5 @@ mkdir ${PROJECT_PATH}/_tmp
 composer create-project laravel/laravel ${PROJECT_PATH}/_tmp
 
 cd ${PROJECT_PATH}
-mv _tmp/* ${PROJECT_PATH}
-rm _tmp
+cp -r _tmp/* ${PROJECT_PATH}
+rm -r -f _tmp
