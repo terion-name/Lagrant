@@ -23,9 +23,9 @@ DATABASE_NAME = 'database'
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
-    config.vm.box = "wheezy64"
+    config.vm.box = "precise64"
 
-    config.vm.box_url = "http://puppet-vagrant-boxes.puppetlabs.com/debian-70rc1-x64-vbox4210.box"
+    config.vm.box_url = "http://files.vagrantup.com/precise64.box"
 
     config.vm.network "private_network", ip: "33.33.33.33"
 
@@ -33,6 +33,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     config.vm.synced_folder "./", "/vagrant", id: "vagrant-root", :owner => "vagrant", :group => "www-data"
 
+    config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
 
     #####################
     # Laravel mountings #
