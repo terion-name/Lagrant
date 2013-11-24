@@ -48,7 +48,7 @@ ${SCRIPTS}/composer.sh
 
 if [ $DATABASE_NAME != "_null" ];
 then
-    ${SCRIPTS}/mysql_create.sh $DATABASE_NAME $DATABASE_ROOT_PASSWORD
+    ${SCRIPTS}/${DATABASE_TYPE}_createdb.sh $DATABASE_NAME $DATABASE_ROOT_PASSWORD
 fi
 
 # We assume that if there is no composer.json it is raw new project
