@@ -15,3 +15,6 @@ wget https://github.com/laravel/laravel/archive/master.zip
 unzip -o master.zip && rm master.zip
 composer install
 php artisan key:generate
+
+# TODO: add local env
+# TODO: update db config if db was created
