@@ -4,6 +4,10 @@ Boilerplate Laravel Vagrant config with autosetup
 ```
 Status: 99% of minimum pack ready
 ```
+##Requirements
+* [Vagrant](http://www.vagrantup.com/)
+* [Virtual Box](https://www.virtualbox.org/)
+
 ##Usage:
 Open terminal, go to desired directory and type in:
 ```bash
