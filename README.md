@@ -1,7 +1,16 @@
-Lagrant
-=======
+#Lagrant
 
 Boilerplate Laravel Vagrant config with autosetup
+```
+Status: 99% of minimum pack ready
+```
+##Usage:
+Open terminal, go to desired directory and type in:
+```bash
+git clone https://github.com/terion-name/Lagrant && vagrant up
+```
+And go have some coffee.
+When the script will finish it's work open http://localhost:8080 or http://33.33.33.33 and you'll see Laravel welcom page.
+Enjoy!
 
-Status: 95% of minimum pack ready
-=======
+### More details comming soon
