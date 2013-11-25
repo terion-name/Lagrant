@@ -16,6 +16,9 @@ DATABASE_ROOT_PASSWORD = 'root'
 DATABASE_CREATE = true
 DATABASE_NAME = 'database'
 
+# What is the name of environment of this VM?
+LOCAL_ENV_NAME = 'local'
+
 
 #########################
 # Vagrant configuration #
@@ -53,7 +56,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     config.vm.provision :shell do |shell|
         shell.path = "vagrant/provision.sh"
-        shell.args = DATABASE_TYPE + " " + DATABASE_ROOT_PASSWORD + ( DATABASE_CREATE ? (" " + DATABASE_NAME) : " _null" )
+        shell.args = LOCAL_ENV_NAME + " " + DATABASE_TYPE + " " + DATABASE_ROOT_PASSWORD + ( DATABASE_CREATE ? (" " + DATABASE_NAME) : " _null" )
     end
 
     # If true, then any SSH connections made will enable agent forwarding.

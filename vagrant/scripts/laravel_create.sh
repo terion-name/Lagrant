@@ -1,14 +1,9 @@
 #!/usr/bin/env bash
 
 PROJECT_PATH=$1
+ENV_NAME=$2
 
 echo "--- Create Laravel project ---"
-
-# mkdir ${PROJECT_PATH}/_tmp
-# composer create-project laravel/laravel ${PROJECT_PATH}/_tmp
-# cd ${PROJECT_PATH}
-# cp -r _tmp/* ${PROJECT_PATH}
-# rm -r -f _tmp
 
 cd ${PROJECT_PATH}
 wget https://github.com/laravel/laravel/archive/master.zip
@@ -17,6 +12,7 @@ cp -r laravel-master/* ./
 rm -r -f laravel-master
 composer install
 php artisan key:generate
+mkdir ${PROJECT_PATH}/app/config/${ENV_NAME}
 
 # TODO: add local env
 # TODO: update db config if db was created

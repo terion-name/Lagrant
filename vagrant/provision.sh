@@ -16,9 +16,10 @@
 SCRIPTS=/vagrant/vagrant/scripts
 PROJECT_PATH=/vagrant
 
-DATABASE_TYPE=$1
-DATABASE_ROOT_PASSWORD=$2
-DATABASE_NAME=$3
+ENV_NAME=$1
+DATABASE_TYPE=$2
+DATABASE_ROOT_PASSWORD=$3
+DATABASE_NAME=$4
 
 echo "--- Setting up system ---"
 
@@ -57,8 +58,12 @@ fi
 
 if [ ! -a "/vagrant/composer.json" ];
 then
-    ${SCRIPTS}/laravel_create.sh $PROJECT_PATH
-    ${SCRIPTS}/laravel_dev_packages.sh $PROJECT_PATH
+    ${SCRIPTS}/laravel_create.sh $PROJECT_PATH $ENV_NAME
+    if [ $DATABASE_NAME != "_null" ];
+    then
+        ${SCRIPTS}/laravel_set_db.sh $PROJECT_PATH $ENV_NAME $DATABASE_TYPE $DATABASE_NAME $DATABASE_ROOT_PASSWORD
+    fi
+    ${SCRIPTS}/laravel_dev_packages.sh $PROJECT_PATH $ENV_NAME
 else
-    ${SCRIPTS}/laravel_migrate.sh $PROJECT_PATH
+    ${SCRIPTS}/laravel_migrate.sh $PROJECT_PATH $ENV_NAME
 fi
