@@ -13,6 +13,8 @@ echo "--- Create Laravel project ---"
 cd ${PROJECT_PATH}
 wget https://github.com/laravel/laravel/archive/master.zip
 unzip -o master.zip && rm master.zip
+mv -f laravel-master/* ./
+rm -r -f laravel-master
 composer install
 php artisan key:generate
 
