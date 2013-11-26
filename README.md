@@ -4,7 +4,7 @@ Boilerplate Laravel Vagrant config with autosetup.
 
 **Makes an isolated local development featured environment and installs Laravel with dev-packages OR runs exisisting one.**
 ```
-Status: In development. 95% of minimum pack ready
+Status: In development. Minimum pack ready. Addons to go
 ```
 ##Requirements
 * [Vagrant](http://www.vagrantup.com/)
@@ -45,10 +45,12 @@ Also it will create a database with provided in Vagrantfile credentials (default
 If it performs a clean install of Laravel, it will create an environment configs set (defaults to *dev*) and set up local database and app configs.
 
 Development packages (will be added during fresh install) included at the moment:
-[only composer require-dev, config autoupdating comming soon]
 * [way/generators](https://github.com/JeffreyWay/Laravel-4-Generators) — awesome code generators for rapid development
+* [way/laravel-test-helpers](https://github.com/JeffreyWay/Laravel-Test-Helpers) — helpers for Unit Testing
+* [barryvdh/laravel-ide-helper](https://github.com/barryvdh/laravel-ide-helper) — IDE helper generator
 * [loic-sharma/profiler](https://github.com/loic-sharma/profiler) — profiler toolbar
 * [fzaninotto/faker](https://github.com/fzaninotto/Faker) — perfect tool for faking data and seeding test/dev databases
+* [codeception/codeception](https://github.com/Codeception/Codeception) — great BDD-testing tool
 
 ##Roadmap
 * mariadb
