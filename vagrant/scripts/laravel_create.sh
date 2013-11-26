@@ -14,4 +14,4 @@ composer install
 php artisan key:generate
 
 mkdir ${PROJECT_PATH}/app/config/${ENV_NAME}
-cp ${PROJECT_PATH}/vagrant/templates/laravel_config_app.php ${PROJECT_PATH}/app/config/${ENV_NAME}/app.php
+cp ${PROJECT_PATH}/vagrant/templates/laravel_config_app.stub ${PROJECT_PATH}/app/config/${ENV_NAME}/app.php

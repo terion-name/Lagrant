@@ -14,7 +14,7 @@ fi
 echo "--- Set up database in Laravel ---"
 
 cd ${PROJECT_PATH}/app/config/${ENV_NAME}
-cp ${PROJECT_PATH}/vagrant/templates/laravel_config_database.php ./database.php
+cp ${PROJECT_PATH}/vagrant/templates/laravel_config_database.stub ./database.php
 
 sed -i "s/{{DB_TYPE}}/$DATABASE_TYPE/g" ./database.php
 sed -i "s/{{DB_NAME}}/$DATABASE_NAME/" ./database.php
