@@ -16,8 +16,8 @@ composer update
 
 cd ${PROJECT_PATH}/app/config/${ENV_NAME}
 
-PROVIDERS="'Way\Generators\GeneratorsServiceProvider', 'Profiler\ProfilerServiceProvider', 'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider'"
-FACADES="'Profiler' => 'Profiler\Facades\Profiler'"
+PROVIDERS="'Way\\Generators\\GeneratorsServiceProvider', 'Profiler\\ProfilerServiceProvider', 'Barryvdh\\LaravelIdeHelper\\IdeHelperServiceProvider'"
+FACADES="'Profiler' => 'Profiler\\Facades\\Profiler'"
 
 sed -i "s/{{PROVIDERS_ARRAY}}/$PROVIDERS/" ./app.php
 sed -i "s/{{ALIASES_ARRAY}}/$FACADES/" ./app.php
