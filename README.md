@@ -36,7 +36,7 @@ Lagrant will load Ubuntu 12 x64 VM with following components:
 * redis
 * mongodb
 * nodejs and npm
-* gmagick or imagick (gmagick by default, it is quite faster)
+* imagick or gmagick (imagick by default)
 * xdebug
 * phpunit
 * composer
