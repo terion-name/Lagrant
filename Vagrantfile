@@ -17,7 +17,7 @@ DATABASE_CREATE = true
 DATABASE_NAME = 'database'
 
 # What is the name of environment of this VM?
-LOCAL_ENV_NAME = 'local'
+LOCAL_ENV_NAME = 'dev'
 
 
 #########################

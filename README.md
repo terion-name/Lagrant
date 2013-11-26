@@ -42,7 +42,7 @@ Lagrant will load Ubuntu 12 x64 VM with following components:
 * composer
  
 Also it will create a database with provided in Vagrantfile credentials (default root password is *root*, default db name is *database*).
-If it performs a clean install of Laravel, it will create an environment configs set (defaults to *local*) and set up local database and app configs.
+If it performs a clean install of Laravel, it will create an environment configs set (defaults to *dev*) and set up local database and app configs.
 
 Development packages (will be added during fresh install) included at the moment:
 [only composer require-dev, config autoupdating comming soon]
