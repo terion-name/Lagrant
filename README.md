@@ -65,3 +65,6 @@ Development packages (will be added during fresh install) included at the moment
 * DART
 * apache
 * and bunch of cool Laravel Packages
+ 
+##Thanx
+Thanx to [Jeffrey Way](https://github.com/JeffreyWay) for inspiring
