@@ -28,7 +28,7 @@ echo "App::register('Barryvdh\\LaravelIdeHelper\\IdeHelperServiceProvider')->boo
 echo -e '\n' >> ${ENV_NAME}.php
 
 # register aliases
-echo "App::bind('Profiler' => 'Profiler\\Facades\\Profiler');" >> ${ENV_NAME}.php
+echo "App::bind('Profiler', 'Profiler\\Facades\\Profiler');" >> ${ENV_NAME}.php
 
 # publish packages configs
 
