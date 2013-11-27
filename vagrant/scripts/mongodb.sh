@@ -9,6 +9,7 @@ sudo apt-get update
 sudo apt-get install mongodb-10gen
 sudo /etc/init.d/mongodb start
 
-echo "--- MongoDB PHP extension ---"
-sudo pecl install mongo
-sudo sh -c 'echo "extension=mongo.so" >> /etc/php5/fpm/php.ini'
+# MongoClient is included by default in php so there is no need in Mongo extension
+# echo "--- MongoDB PHP extension ---"
+# sudo pecl install mongo
+# sudo sh -c 'echo "extension=mongo.so" >> /etc/php5/fpm/php.ini'
