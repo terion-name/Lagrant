@@ -10,7 +10,7 @@ wget https://github.com/laravel/laravel/archive/master.zip
 unzip -o master.zip && rm master.zip
 cp -r laravel-master/* ./
 rm -r -f laravel-master
-composer install
+composer install --prefer-source
 php artisan key:generate
 
 mkdir ${PROJECT_PATH}/app/config/${ENV_NAME}
