@@ -15,9 +15,15 @@ composer update --prefer-source
 
 # update configs
 
-cd ${PROJECT_PATH}/app/start
+# this will update main config and add package installer provider
+
+cd ${PROJECT_PATH}/app/config
+REPLACE_ANCHOR="'Illuminate\\\Workbench\\\WorkbenchServiceProvider',"
+REPLACE_STR=$REPLACE_ANCHOR"\n\n        'Rtablada\\\PackageInstaller\\\PackageInstallerServiceProvider',"
+sed -i "s/$REPLACE_ANCHOR/$REPLACE_STR/" app.php
 
 # create a start file for development environment
+cd ${PROJECT_PATH}/app/start
 echo -e '<?php\n' > ${ENV_NAME}.php
 
 # register providers via start file (see https://github.com/laravel/framework/issues/1603#issuecomment-21864164)
