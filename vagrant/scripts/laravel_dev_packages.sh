@@ -8,7 +8,7 @@ echo "--- Add Laravel dev packcages ---"
 # update composer.json
 
 cd ${PROJECT_PATH}
-composer require rtablada/package-installer
+composer require rtablada/package-installer:dev-master
 composer require --dev --no-update loic-sharma/profiler:1.1.* way/generators:dev-master way/laravel-test-helpers:dev-master barryvdh/laravel-ide-helper:1.*
 composer require --dev --no-update fzaninotto/faker:dev-master codeception/codeception:* phpunit/phpunit=3.7.*
 composer update
