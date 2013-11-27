@@ -18,14 +18,14 @@ composer update
 cd ${PROJECT_PATH}/app/start
 
 # create a start file for development environment
-echo '<?php\n\n' > ${ENV_NAME}.php
+echo -e '<?php\n' > ${ENV_NAME}.php
 
 # register providers via start file (see https://github.com/laravel/framework/issues/1603#issuecomment-21864164)
 echo "App::register('Way\\Generators\\GeneratorsServiceProvider');" >> ${ENV_NAME}.php
 echo "App::register('Profiler\\ProfilerServiceProvider');" >> ${ENV_NAME}.php
 echo "App::register('Barryvdh\\LaravelIdeHelper\\IdeHelperServiceProvider');" >> ${ENV_NAME}.php
 
-echo '\n\n' > ${ENV_NAME}.php
+echo -e '\n' >> ${ENV_NAME}.php
 
 # register aliases
 echo "App::bind('Profiler' => 'Profiler\\Facades\\Profiler');" >> ${ENV_NAME}.php
