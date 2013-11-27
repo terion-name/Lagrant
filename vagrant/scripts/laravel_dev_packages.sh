@@ -21,9 +21,9 @@ cd ${PROJECT_PATH}/app/start
 echo -e '<?php\n' > ${ENV_NAME}.php
 
 # register providers via start file (see https://github.com/laravel/framework/issues/1603#issuecomment-21864164)
-echo "App::register('Way\\Generators\\GeneratorsServiceProvider');" >> ${ENV_NAME}.php
-echo "App::register('Profiler\\ProfilerServiceProvider');" >> ${ENV_NAME}.php
-echo "App::register('Barryvdh\\LaravelIdeHelper\\IdeHelperServiceProvider');" >> ${ENV_NAME}.php
+echo "App::register('Way\\Generators\\GeneratorsServiceProvider')->boot();" >> ${ENV_NAME}.php
+echo "App::register('Profiler\\ProfilerServiceProvider')->boot();" >> ${ENV_NAME}.php
+echo "App::register('Barryvdh\\LaravelIdeHelper\\IdeHelperServiceProvider')->boot();" >> ${ENV_NAME}.php
 
 echo -e '\n' >> ${ENV_NAME}.php
 
