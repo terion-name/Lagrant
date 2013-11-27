@@ -48,6 +48,7 @@ fi
 
 # generate IDE helper
 
+cd ${PROJECT_PATH}
 php artisan clear-compiled --env="${ENV_NAME}"
 php artisan ide-helper:generate --env="${ENV_NAME}"
 php artisan optimize --env="${ENV_NAME}"
