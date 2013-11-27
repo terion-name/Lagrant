@@ -38,6 +38,14 @@ cd ${PROJECT_PATH}
 php artisan config:publish loic-sharma/profiler --env="${ENV_NAME}"
 php artisan config:publish barryvdh/laravel-ide-helper --env="${ENV_NAME}"
 
+# set up environment detection
+
+cd ${PROJECT_PATH}/bootstrap
+sed -i "s/'your-machine-name'/'localhost'/" ./start.php
+if [ $ENV_NAME != 'local' ]; then
+    sed -i "s/'local'/'${ENV_NAME}'/" ./start.php
+fi
+
 # generate IDE helper
 
 php artisan clear-compiled --env="${ENV_NAME}"
