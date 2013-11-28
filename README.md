@@ -4,7 +4,7 @@ Boilerplate Laravel Vagrant config with autosetup.
 
 **Makes an isolated local development featured environment and installs Laravel with dev-packages OR runs exisisting one.**
 ```
-Status: In development. Minimum pack ready. Addons to go
+Status: Beta. Minimum pack ready. Addons to go
 ```
 ##Requirements
 * [Vagrant](http://www.vagrantup.com/)
@@ -27,6 +27,13 @@ If you run Lagrant from an existing project repo it will setup the VM and migrat
 
 ###Advanced usage
 If you're not happy with my defaults, fork the repo, edit variables in the beginning of Vagrantfile, edit provision.sh script by changing set of existing modules and/or write your own and use it :)
+
+###Using VM resources
+To use shipped resources (such as composer, phpunit, etc) open terminal in project directory and type ```vagrant ssh```. Then ```cd /vagrant``` and you are in project root in the VM. Files are seamlessly synced, so all your changes in VM will immediatly appear in host filesystem.
+
+To connect to your databases (mysql, mongo, etc) in VM via clients use connection over SSH tunnel. SSH host will be 33.33.33.33, user and password — vagrant. Like this:
+
+![mongohub](http://img822.imageshack.us/img822/1064/bp6h.png)
 
 ##What's in the box
 Lagrant will load Ubuntu 12 x64 VM with following components:
@@ -54,11 +61,21 @@ Development packages (will be added during fresh install) included at the moment
 
 Other packages (added to require section of composer and to configs):
 * [rtablada/package-installer](https://github.com/rtablada/package-installer) — handy tool for quick and easy installation of supported Laravel 4 packages
+ 
+##Troubleshoting
+
+If establishing of private network during VM booting fails, run (for Mac users):
+```
+sudo /Library/StartupItems/VirtualBox/VirtualBox restart
+```
+(see [this Vagrant/Virtual Box issue](https://github.com/mitchellh/vagrant/issues/2392#issuecomment-27367698) for details)
+
+If you faced any error — feel free to open [an issue](https://github.com/terion-name/Lagrant/issues)
 
 ##Roadmap
+* xhprof
 * mariadb
 * postgresql
-* xhprof
 * ruby
 * bower
 * grunt
