@@ -16,7 +16,7 @@ Open terminal, go to desired directory and type in:
 ```bash
 git clone https://github.com/terion-name/Lagrant && mv Lagrant/* ./ && rm -r -f Lagrant && vagrant up
 ```
-Or just clone/download, edit Vagrantfile's variables and run ```vagrant up```
+Or just clone/download Lagrant, edit Vagrantfile's variables and/or provision.sh to your prefers and run ```vagrant up```
 
 And go have some coffee.
 When the script will finish it's work open [http://localhost:8080](http://localhost:8080) or http://33.33.33.33 and you'll see Laravel welcome page.
@@ -51,6 +51,9 @@ Development packages (will be added during fresh install) included at the moment
 * [loic-sharma/profiler](https://github.com/loic-sharma/profiler) — profiler toolbar
 * [fzaninotto/faker](https://github.com/fzaninotto/Faker) — perfect tool for faking data and seeding test/dev databases
 * [codeception/codeception](https://github.com/Codeception/Codeception) — great BDD-testing tool
+
+Other packages (added to require section of composer and to configs):
+* [rtablada/package-installer](https://github.com/rtablada/package-installer) — handy tool for quick and easy installation of supported Laravel 4 packages
 
 ##Roadmap
 * mariadb
