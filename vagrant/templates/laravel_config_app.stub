@@ -6,16 +6,4 @@ return array(
 
     'url' => 'http://localhost:8080',
 
-    /*'providers' => array(
-
-        {{PROVIDERS_ARRAY}}
-
-    ),
-
-    'aliases' => array(
-
-        {{ALIASES_ARRAY}}
-
-    ),*/
-
 );
