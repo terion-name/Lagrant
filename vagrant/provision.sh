@@ -23,7 +23,7 @@ DATABASE_NAME=$4
 
 echo "--- Setting up system ---"
 
-${SCRIPTS}/init.sh
+${SCRIPTS}/init.sh $ENV_NAME
 
 ${SCRIPTS}/php.sh
 
