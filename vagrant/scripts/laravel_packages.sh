@@ -21,13 +21,13 @@ cd ${PROJECT_PATH}/app/config
 
 # setting serviceProviders
 REPLACE_ANCHOR="'Illuminate\\\Workbench\\\WorkbenchServiceProvider',"
-REPLACE_STR=$REPLACE_ANCHOR"\n\n        'Profiler\\\ProfilerServiceProvider'\n\n        'Rtablada\\\PackageInstaller\\\PackageInstallerServiceProvider',"
+REPLACE_STR=$REPLACE_ANCHOR"\n\n        'Profiler\\\ProfilerServiceProvider',\n\n        'Rtablada\\\PackageInstaller\\\PackageInstallerServiceProvider',"
 sed -i "s/$REPLACE_ANCHOR/$REPLACE_STR/" app.php
 
 # setting aliases
 REPLACE_ANCHOR_2="'View'            => 'Illuminate\\\Support\\\Facades\\\View',"
 REPLACE_STR_2=$REPLACE_ANCHOR_2"\n\n        'Profiler'            => 'Profiler\\\Facades\\\Profiler',"
-sed -i "s/$REPLACE_ANCHOR/$REPLACE_STR/" app.php
+sed -i "s/$REPLACE_ANCHOR_2/$REPLACE_STR_2/" app.php
 
 # create a start file for development environment
 cd ${PROJECT_PATH}/app/start
