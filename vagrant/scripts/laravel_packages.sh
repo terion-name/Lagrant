@@ -18,8 +18,15 @@ composer update --prefer-source
 # this will update main config and add package installer provider
 
 cd ${PROJECT_PATH}/app/config
+
+# setting serviceProviders
 REPLACE_ANCHOR="'Illuminate\\\Workbench\\\WorkbenchServiceProvider',"
-REPLACE_STR=$REPLACE_ANCHOR"\n\n        'Rtablada\\\PackageInstaller\\\PackageInstallerServiceProvider',"
+REPLACE_STR=$REPLACE_ANCHOR"\n\n        'Profiler\\\ProfilerServiceProvider'\n\n        'Rtablada\\\PackageInstaller\\\PackageInstallerServiceProvider',"
+sed -i "s/$REPLACE_ANCHOR/$REPLACE_STR/" app.php
+
+# setting aliases
+REPLACE_ANCHOR_2="'View'            => 'Illuminate\\\Support\\\Facades\\\View',"
+REPLACE_STR_2=$REPLACE_ANCHOR_2"\n\n        'Profiler'            => 'Profiler\\\Facades\\\Profiler',"
 sed -i "s/$REPLACE_ANCHOR/$REPLACE_STR/" app.php
 
 # create a start file for development environment
@@ -28,20 +35,19 @@ echo -e '<?php\n' > ${ENV_NAME}.php
 
 # register providers via start file (see https://github.com/laravel/framework/issues/1603#issuecomment-21864164)
 echo "App::register('Way\\Generators\\GeneratorsServiceProvider');" >> ${ENV_NAME}.php
-echo "App::register('Profiler\\ProfilerServiceProvider');" >> ${ENV_NAME}.php
 echo "App::register('Barryvdh\\LaravelIdeHelper\\IdeHelperServiceProvider');" >> ${ENV_NAME}.php
 
 echo -e '\n' >> ${ENV_NAME}.php
 
 # register aliases
-echo "\$loader = \\Illuminate\\Foundation\\AliasLoader::getInstance();" >> ${ENV_NAME}.php
-echo "\$loader->alias('Profiler', 'Profiler\\Facades\\Profiler');" >> ${ENV_NAME}.php
+# echo "\$loader = \\Illuminate\\Foundation\\AliasLoader::getInstance();" >> ${ENV_NAME}.php
+# echo "\$loader->alias('Profiler', 'Profiler\\Facades\\Profiler');" >> ${ENV_NAME}.php
 
 # publish packages configs
 
 cd ${PROJECT_PATH}
 
-php artisan config:publish loic-sharma/profiler --env="${ENV_NAME}"
+php artisan config:publish loic-sharma/profiler
 php artisan config:publish barryvdh/laravel-ide-helper --env="${ENV_NAME}"
 
 # set up environment detection
