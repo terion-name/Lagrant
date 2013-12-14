@@ -47,7 +47,7 @@ php artisan config:publish barryvdh/laravel-ide-helper --env="${ENV_NAME}"
 # set up environment detection
 
 cd ${PROJECT_PATH}/bootstrap
-sed -i "s/'your-machine-name'/'localhost'/" ./start.php
+sed -i "s/'your-machine-name'/'${ENV_NAME}'/" ./start.php
 if [ $ENV_NAME != 'local' ]; then
     sed -i "s/'local'/'${ENV_NAME}'/" ./start.php
 fi
