@@ -40,6 +40,8 @@ ${SCRIPTS}/mongodb.sh
 
 ${SCRIPTS}/nodejs.sh
 
+${SCRIPTS}/bower.sh
+
 ${SCRIPTS}/imagick.sh
 
 ${SCRIPTS}/xdebug.sh
