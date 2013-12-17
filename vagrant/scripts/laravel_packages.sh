@@ -20,8 +20,8 @@ composer require --dev --no-update fzaninotto/faker:dev-master codeception/codec
 composer update --prefer-source
 
 # adding recommended action for laravel-debugbar
-COMPOSER_REPLACE_ANCHOR="\"post-update-cmd\": ["
-COMPOSER_REPLACE_STR=$COMPOSER_REPLACE_ANCHOR"\n\n            \"php artisan debugbar:publish\","
+COMPOSER_REPLACE_ANCHOR='"post-update-cmd": \['
+COMPOSER_REPLACE_STR=$COMPOSER_REPLACE_ANCHOR"\n"'            "php artisan debugbar:publish",'
 sed -i "s/$COMPOSER_REPLACE_ANCHOR/$COMPOSER_REPLACE_STR/" composer.json
 
 
