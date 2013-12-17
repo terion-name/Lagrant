@@ -82,7 +82,6 @@ echo -e '\n' >> ${ENV_NAME}.php
 
 cd ${PROJECT_PATH}
 
-# php artisan config:publish loic-sharma/profiler
 php artisan debugbar:publish
 php artisan config:publish barryvdh/laravel-ide-helper --env="${ENV_NAME}"
 php artisan config:publish barryvdh/laravel-debugbar
