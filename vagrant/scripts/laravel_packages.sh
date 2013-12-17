@@ -8,7 +8,8 @@ echo "--- Add Laravel dev packcages ---"
 # update composer.json
 
 cd ${PROJECT_PATH}
-composer require --no-update loic-sharma/profiler:1.1.* rtablada/package-installer:dev-master
+composer require --no-update loic-sharma/profiler:1.1.*
+# composer require --no-update rtablada/package-installer:dev-master
 composer require --dev --no-update way/generators:dev-master way/laravel-test-helpers:dev-master barryvdh/laravel-ide-helper:1.*
 composer require --dev --no-update fzaninotto/faker:dev-master codeception/codeception:* phpunit/phpunit=3.7.*
 composer update --prefer-source
@@ -21,7 +22,8 @@ cd ${PROJECT_PATH}/app/config
 
 # setting serviceProviders
 REPLACE_ANCHOR="'Illuminate\\\Workbench\\\WorkbenchServiceProvider',"
-REPLACE_STR=$REPLACE_ANCHOR"\n\n        'Profiler\\\ProfilerServiceProvider',\n\n        'Rtablada\\\PackageInstaller\\\PackageInstallerServiceProvider',"
+# REPLACE_STR=$REPLACE_ANCHOR"\n\n        'Profiler\\\ProfilerServiceProvider',\n\n        'Rtablada\\\PackageInstaller\\\PackageInstallerServiceProvider',"
+REPLACE_STR=$REPLACE_ANCHOR"\n\n        'Profiler\\\ProfilerServiceProvider',"
 sed -i "s/$REPLACE_ANCHOR/$REPLACE_STR/" app.php
 
 # setting aliases
@@ -48,7 +50,7 @@ echo -e '\n' >> ${ENV_NAME}.php
 cd ${PROJECT_PATH}
 
 php artisan config:publish loic-sharma/profiler
-php artisan config:publish barryvdh/laravel-ide-helper --env="${ENV_NAME}"
+# php artisan config:publish barryvdh/laravel-ide-helper --env="${ENV_NAME}"
 
 # set up environment detection
 
