@@ -48,6 +48,8 @@ ${SCRIPTS}/less.sh
 
 ${SCRIPTS}/coffeescript.sh
 
+${SCRIPTS}/ruby.sh
+
 ${SCRIPTS}/imagick.sh
 
 ${SCRIPTS}/xdebug.sh
