@@ -42,6 +42,8 @@ ${SCRIPTS}/nodejs.sh
 
 ${SCRIPTS}/bower.sh
 
+${SCRIPTS}/grunt.sh
+
 ${SCRIPTS}/imagick.sh
 
 ${SCRIPTS}/xdebug.sh

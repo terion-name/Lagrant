@@ -44,6 +44,7 @@ Lagrant will load Ubuntu 12 x64 VM with following components:
 * mongodb
 * nodejs and npm
 * bower
+* grunt
 * imagick or gmagick (imagick by default)
 * xdebug
 * phpunit
@@ -78,7 +79,6 @@ If you faced any error — feel free to open [an issue](https://github.com/terio
 * mariadb
 * postgresql
 * ruby
-* grunt
 * less
 * YUI compressor
 * coffeescript
