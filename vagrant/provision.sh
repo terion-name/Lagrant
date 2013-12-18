@@ -44,6 +44,8 @@ ${SCRIPTS}/bower.sh
 
 ${SCRIPTS}/grunt.sh
 
+${SCRIPTS}/phantomjs.sh
+
 ${SCRIPTS}/less.sh
 
 ${SCRIPTS}/coffeescript.sh

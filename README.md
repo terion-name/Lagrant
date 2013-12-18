@@ -45,6 +45,7 @@ Lagrant will load Ubuntu 12 x64 VM with following components:
 * nodejs and npm
 * bower
 * grunt
+* phantomjs
 * less
 * coffeescript
 * ruby
