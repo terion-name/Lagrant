@@ -44,6 +44,10 @@ ${SCRIPTS}/bower.sh
 
 ${SCRIPTS}/grunt.sh
 
+${SCRIPTS}/less.sh
+
+${SCRIPTS}/coffeescript.sh
+
 ${SCRIPTS}/imagick.sh
 
 ${SCRIPTS}/xdebug.sh
