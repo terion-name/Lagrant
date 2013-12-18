@@ -43,6 +43,7 @@ Lagrant will load Ubuntu 12 x64 VM with following components:
 * redis
 * mongodb
 * nodejs and npm
+* bower
 * imagick or gmagick (imagick by default)
 * xdebug
 * phpunit
@@ -55,12 +56,12 @@ Development packages (will be added during fresh install) included at the moment
 * [way/generators](https://github.com/JeffreyWay/Laravel-4-Generators) — awesome code generators for rapid development
 * [way/laravel-test-helpers](https://github.com/JeffreyWay/Laravel-Test-Helpers) — helpers for Unit Testing
 * [barryvdh/laravel-ide-helper](https://github.com/barryvdh/laravel-ide-helper) — IDE helper generator
-* [loic-sharma/profiler](https://github.com/loic-sharma/profiler) — profiler toolbar
 * [fzaninotto/faker](https://github.com/fzaninotto/Faker) — perfect tool for faking data and seeding test/dev databases
 * [codeception/codeception](https://github.com/Codeception/Codeception) — great BDD-testing tool
 
 Other packages (added to require section of composer and to configs):
-* [rtablada/package-installer](https://github.com/rtablada/package-installer) — handy tool for quick and easy installation of supported Laravel 4 packages
+* [barryvdh/laravel-debugbar](https://github.com/barryvdh/laravel-debugbar) — awesome debug panel
+* ~~[rtablada/package-installer](https://github.com/rtablada/package-installer) — handy tool for quick and easy installation of supported Laravel 4 packages~~ (is not compatible with Laravel 4.1, commented out till fix) 
  
 ##Troubleshoting
 
@@ -77,7 +78,6 @@ If you faced any error — feel free to open [an issue](https://github.com/terio
 * mariadb
 * postgresql
 * ruby
-* bower
 * grunt
 * less
 * YUI compressor
