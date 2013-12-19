@@ -43,6 +43,7 @@ ${SCRIPTS}/nodejs.sh
 ${SCRIPTS}/bower.sh
 
 ${SCRIPTS}/grunt.sh
+${SCRIPTS}/grunt-autoprefixer.sh
 
 ${SCRIPTS}/phantomjs.sh
 
