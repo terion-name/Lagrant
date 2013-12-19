@@ -37,23 +37,23 @@ To connect to your databases (mysql, mongo, etc) in VM via clients use connectio
 
 ##What's in the box
 Lagrant will load Ubuntu 12 x64 VM with following components:
-* php 5.5
-* nginx as a default web-server
-* chosen database (mysql, mariadb, postgresql; currently only mysql supported)
-* redis
-* mongodb
-* nodejs and npm
-* bower
-* grunt
+* [php 5.5](http://php.net)
+* [nginx](http://nginx.org/) as a default web-server
+* chosen database ([mysql](http://www.mysql.com/), [mariadb](https://mariadb.org/), [postgresql](http://www.postgresql.org/); currently only mysql supported)
+* [redis](http://redis.io/)
+* [mongodb](http://www.mongodb.org/)
+* [nodejs](http://nodejs.org/) and [npm](https://npmjs.org/)
+* [bower](http://bower.io/)
+* [grunt](http://gruntjs.com/)
 * [grunt-autoprefixer](https://github.com/nDmitry/grunt-autoprefixer)
-* phantomjs
-* less
-* coffeescript
-* ruby
-* imagick or gmagick (imagick by default)
-* xdebug
-* phpunit
-* composer
+* [phantomjs](http://phantomjs.org/)
+* [less](http://lesscss.org/)
+* [coffeescript](http://coffeescript.org/)
+* [ruby](https://www.ruby-lang.org)
+* [imagick](http://php.net/imagick) or [gmagick](http://www.php.net/manual/en/book.gmagick.php) (imagick by default)
+* [xdebug](http://xdebug.org/)
+* [phpunit](http://phpunit.de/)
+* [composer](http://getcomposer.org/)
  
 Also it will create a database with provided in Vagrantfile credentials (default root password is *root*, default db name is *database*).
 If it performs a clean install of Laravel, it will create an environment configs set (defaults to *dev*) and set up local database and app configs.
