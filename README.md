@@ -80,12 +80,20 @@ sudo /Library/StartupItems/VirtualBox/VirtualBox restart
 If you faced any error — feel free to open [an issue](https://github.com/terion-name/Lagrant/issues)
 
 ##Roadmap
+
+###Server
 * xhprof
 * mariadb
+* phpMyAdmin
 * postgresql
-* DART
+* phpPgAdmin
 * apache, as an alternative web server
-* and bunch of cool Laravel Packages
+
+###Application
+* basic bower config
+* basic grunt config
+* build scripts (artisan commands)
+* and bunch of cool Laravel Packages (research in progress)
  
 ##Thanx
 Thanx to [Jeffrey Way](https://github.com/JeffreyWay) for inspiring
