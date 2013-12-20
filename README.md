@@ -83,9 +83,8 @@ If you faced any error — feel free to open [an issue](https://github.com/terio
 * xhprof
 * mariadb
 * postgresql
-* YUI compressor
 * DART
-* apache
+* apache, as an alternative web server
 * and bunch of cool Laravel Packages
  
 ##Thanx
