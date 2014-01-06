@@ -54,6 +54,7 @@ Lagrant will load Ubuntu 12 x64 VM with following components:
 * [xdebug](http://xdebug.org/)
 * [phpunit](http://phpunit.de/)
 * [composer](http://getcomposer.org/)
+* [beanstalkd queue server](https://github.com/kr/beanstalkd) and [beanstalk console](https://github.com/ptrofimov/beanstalk_console)
  
 Also it will create a database with provided in Vagrantfile credentials (default root password is *root*, default db name is *database*).
 If it performs a clean install of Laravel, it will create an environment configs set (defaults to *dev*) and set up local database and app configs.
@@ -87,7 +88,6 @@ If you faced any error — feel free to open [an issue](https://github.com/terio
 * phpMyAdmin
 * postgresql
 * phpPgAdmin
-* beanstalk and beanstalk console
 * apache, as an alternative web server
 
 ###Application
