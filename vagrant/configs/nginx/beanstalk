@@ -1,0 +1,15 @@
+        location /beanstalkd {
+                alias /home/vagrant/beanstalk-console/public;
+                index index.php index.html index.htm;
+                try_files $uri $uri/ index.php?q=$uri&$args;
+
+                location ~ \.php$ {
+                                fastcgi_pass unix:/var/run/php5-fpm.sock;
+                                fastcgi_index index.php;
+                                fastcgi_param SCRIPT_FILENAME $request_filename;
+                                fastcgi_buffer_size 128k;
+                                fastcgi_buffers 4 256k;
+                                fastcgi_busy_buffers_size 256k;
+                                include fastcgi_params;
+                        }
+        }

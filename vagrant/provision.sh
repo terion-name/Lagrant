@@ -61,6 +61,8 @@ ${SCRIPTS}/phpunit.sh
 
 ${SCRIPTS}/composer.sh
 
+${SCRIPTS}/beanstalkd.sh
+
 if [ -n "$DATABASE_NAME" ];
 then
     ${SCRIPTS}/${DATABASE_TYPE}_createdb.sh $DATABASE_NAME $DATABASE_ROOT_PASSWORD
