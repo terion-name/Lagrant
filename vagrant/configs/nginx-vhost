@@ -9,7 +9,7 @@ server {
         index index.php index.html;
 
         if (!-d $request_filename) {
-                rewrite ^/(.+)/$ /$1 permanent;
+                rewrite ^/(.+)/$ $scheme://$http_host/$1 permanent;
         }
 
         location / {
@@ -27,4 +27,6 @@ server {
                 fastcgi_busy_buffers_size 256k;
                 include fastcgi_params;
         }
+
+        #place-more-options-here
 }
