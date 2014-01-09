@@ -17,9 +17,10 @@ sed -i "s/\/\*'localhost:11300'\*\//'localhost:11300'/" /home/vagrant/beanstalk-
 # Patch nginx config
 
 REPLACE_ANCHOR='#place-more-options-here'
-BEANSTALK_CONFIG='include \/vagrant\/vagrant\/configs\/nginx\/beanstalk;'
+BEANSTALK_CONFIG='include \/etc\/nginx\/beanstalk;'
 REPLACE_STR=$BEANSTALK_CONFIG"\n"$REPLACE_ANCHOR
 
+sudo cp /vagrant/vagrant/configs/nginx/beanstalk /etc/nginx/beanstalk
 sudo sed -i "s/$REPLACE_ANCHOR/$REPLACE_STR/" /etc/nginx/sites-available/default
 
 # Enable autostart
