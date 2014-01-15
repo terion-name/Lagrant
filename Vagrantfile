@@ -34,25 +34,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     config.vm.network :forwarded_port, guest: 80, host: 8080
 
-    config.vm.synced_folder "./", "/vagrant", id: "vagrant-root", :owner => "vagrant", :group => "www-data"
+    config.vm.synced_folder "./", "/vagrant", type: "nfs", id: "vagrant-root",
+            :owner => "vagrant",
+            :group => "www-data",
+            :mount_options => ["dmode=775","fmode=664"]
 
     config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
 
-    #####################
-    # Laravel mountings #
-    #####################
-
-    #laravel-specific mounts - storage
-    config.vm.synced_folder "./app/storage", "/vagrant/app/storage", id: "vagrant-storage",
-        :owner => "vagrant",
-        :group => "www-data",
-        :mount_options => ["dmode=775","fmode=664"]
-
-    #laravel-specific mounts - public
-    config.vm.synced_folder "./public", "/vagrant/public", id: "vagrant-public",
-        :owner => "vagrant",
-        :group => "www-data",
-        :mount_options => ["dmode=775","fmode=664"]
 
     config.vm.provision :shell do |shell|
         shell.path = "vagrant/provision.sh"
