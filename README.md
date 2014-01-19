@@ -89,7 +89,6 @@ If you faced any error — feel free to open [an issue](https://github.com/terio
 * phpMyAdmin
 * postgresql
 * phpPgAdmin
-* apache, as an alternative web server
 
 ###Application
 * basic bower config
