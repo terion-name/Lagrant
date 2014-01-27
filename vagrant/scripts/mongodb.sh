@@ -12,3 +12,4 @@ sudo /etc/init.d/mongodb start
 echo "--- MongoDB PHP extension ---"
 sudo pecl install mongo
 sudo sh -c 'echo "extension=mongo.so" >> /etc/php5/fpm/php.ini'
+sudo sh -c 'echo "extension=mongo.so" >> /etc/php5/cli/php.ini'
