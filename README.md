@@ -68,7 +68,8 @@ Development packages (will be added during fresh install) included at the moment
 
 Other packages (added to require section of composer and to configs):
 * [barryvdh/laravel-debugbar](https://github.com/barryvdh/laravel-debugbar) — awesome debug panel
-* ~~[rtablada/package-installer](https://github.com/rtablada/package-installer) — handy tool for quick and easy installation of supported Laravel 4 packages~~ (is not compatible with Laravel 4.1, commented out till fix) 
+* [Anahkiasen/rocketeer](https://github.com/Anahkiasen/rocketeer) — incredible deployment tool
+* ~~[rtablada/package-installer](https://github.com/rtablada/package-installer) — handy tool for quick and easy installation of supported Laravel 4 packages~~ (is not compatible with Laravel 4.1, commented out till fix)
 * [pda/pheanstalk](https://github.com/pda/pheanstalk/) for beanstalkd L4 core support
  
 ##Troubleshoting

@@ -14,7 +14,7 @@ cd ${PROJECT_PATH}
 # while package-installer is not compatible with L4.1, comment it
 # composer require --no-update rtablada/package-installer:dev-master
 
-composer require --no-update barryvdh/laravel-debugbar:1.* pda/pheanstalk:dev-master
+composer require --no-update barryvdh/laravel-debugbar:1.* pda/pheanstalk:dev-master anahkiasen/rocketeer:dev-master
 composer require --dev --no-update way/generators:dev-master way/laravel-test-helpers:dev-master barryvdh/laravel-ide-helper:1.*
 composer require --dev --no-update fzaninotto/faker:dev-master codeception/codeception:* phpunit/phpunit=3.7.*
 composer update --prefer-source
@@ -42,7 +42,7 @@ REPLACE_ANCHOR="'Illuminate\\\Workbench\\\WorkbenchServiceProvider',"
 # while package-installer is not compatible with L4.1, comment it
 # REPLACE_STR=$REPLACE_ANCHOR"\n\n        'Barryvdh\\\Debugbar\\\ServiceProvider',\n\n        'Rtablada\\\PackageInstaller\\\PackageInstallerServiceProvider',"
 
-REPLACE_STR=$REPLACE_ANCHOR"\n\n        'Barryvdh\\\Debugbar\\\ServiceProvider',"
+REPLACE_STR=$REPLACE_ANCHOR"\n\n        'Barryvdh\\\Debugbar\\\ServiceProvider',\n\n        'Rocketeer\\\RocketeerServiceProvider',"
 sed -i "s/$REPLACE_ANCHOR/$REPLACE_STR/" app.php
 
 ################################
@@ -50,7 +50,7 @@ sed -i "s/$REPLACE_ANCHOR/$REPLACE_STR/" app.php
 ################################
 
 REPLACE_ANCHOR_2="'View'            => 'Illuminate\\\Support\\\Facades\\\View',"
-REPLACE_STR_2=$REPLACE_ANCHOR_2"\n\n        'Debugbar'            => 'Barryvdh\\\Debugbar\\\Facade',"
+REPLACE_STR_2=$REPLACE_ANCHOR_2"\n\n        'Debugbar'            => 'Barryvdh\\\Debugbar\\\Facade',\n\n        'Rocketeer'            => 'Rocketeer\\\Facades\\\Rocketeer',"
 sed -i "s/$REPLACE_ANCHOR_2/$REPLACE_STR_2/" app.php
 
 ################################
@@ -85,6 +85,7 @@ cd ${PROJECT_PATH}
 php artisan debugbar:publish
 php artisan config:publish barryvdh/laravel-ide-helper --env="${ENV_NAME}"
 php artisan config:publish barryvdh/laravel-debugbar
+php artisan deploy:ignite
 
 ################################
 # set up environment detection
