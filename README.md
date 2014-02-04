@@ -46,6 +46,8 @@ Lagrant will load Ubuntu 12 x64 VM with following components:
 * [bower](http://bower.io/)
 * [grunt](http://gruntjs.com/)
 * [grunt-autoprefixer](https://github.com/nDmitry/grunt-autoprefixer)
+* [gulp](http://gulpjs.com/)
+* [gulp-autoprefixer](https://npmjs.org/package/gulp-autoprefixer)
 * [phantomjs](http://phantomjs.org/)
 * [less](http://lesscss.org/)
 * [coffeescript](http://coffeescript.org/)

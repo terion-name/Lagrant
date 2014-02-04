@@ -45,6 +45,9 @@ ${SCRIPTS}/bower.sh
 ${SCRIPTS}/grunt.sh
 ${SCRIPTS}/grunt-autoprefixer.sh
 
+${SCRIPTS}/gulp.sh
+${SCRIPTS}/gulp-autoprefixer.sh
+
 ${SCRIPTS}/phantomjs.sh
 
 ${SCRIPTS}/less.sh
