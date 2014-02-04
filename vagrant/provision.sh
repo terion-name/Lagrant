@@ -54,6 +54,8 @@ ${SCRIPTS}/less.sh
 
 ${SCRIPTS}/coffeescript.sh
 
+${SCRIPTS}/dart.sh
+
 ${SCRIPTS}/ruby.sh
 
 ${SCRIPTS}/imagick.sh
