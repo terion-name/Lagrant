@@ -6,7 +6,7 @@ ENV_NAME=$2
 echo "--- Add Laravel dev packcages ---"
 
 ################################
-# update composer.json
+echp "update composer.json"
 ################################
 
 cd ${PROJECT_PATH}
@@ -17,16 +17,14 @@ cd ${PROJECT_PATH}
 composer require --no-update barryvdh/laravel-debugbar:1.* pda/pheanstalk:dev-master anahkiasen/rocketeer:dev-master anahkiasen/former:dev-master
 composer require --dev --no-update way/generators:dev-master way/laravel-test-helpers:dev-master barryvdh/laravel-ide-helper:1.*
 composer require --dev --no-update fzaninotto/faker:dev-master codeception/codeception:* phpunit/phpunit=3.7.*
-composer update --prefer-source
 
 # adding recommended action for laravel-debugbar
 COMPOSER_REPLACE_ANCHOR='"post-update-cmd": \['
 COMPOSER_REPLACE_STR=$COMPOSER_REPLACE_ANCHOR"\n"'            "php artisan debugbar:publish",'
 sed -i "s/$COMPOSER_REPLACE_ANCHOR/$COMPOSER_REPLACE_STR/" composer.json
 
-
 ################################
-# update configs
+echo "update configs"
 ################################
 
 # this will update main config and add package installer provider
@@ -34,7 +32,7 @@ sed -i "s/$COMPOSER_REPLACE_ANCHOR/$COMPOSER_REPLACE_STR/" composer.json
 cd ${PROJECT_PATH}/app/config
 
 ################################
-# setting serviceProviders
+echo "setting serviceProviders"
 ################################
 
 REPLACE_ANCHOR="'Illuminate\\\Workbench\\\WorkbenchServiceProvider',"
@@ -46,7 +44,7 @@ REPLACE_STR=$REPLACE_ANCHOR"\n\n        'Barryvdh\\\Debugbar\\\ServiceProvider',
 sed -i "s/$REPLACE_ANCHOR/$REPLACE_STR/" app.php
 
 ################################
-# setting aliases
+echo "setting aliases"
 ################################
 
 REPLACE_ANCHOR_2="'View'            => 'Illuminate\\\Support\\\Facades\\\View',"
@@ -54,14 +52,14 @@ REPLACE_STR_2=$REPLACE_ANCHOR_2"\n\n        'Debugbar'            => 'Barryvdh\\
 sed -i "s/$REPLACE_ANCHOR_2/$REPLACE_STR_2/" app.php
 
 ################################
-# create a start file for development environment
+echo "create a start file for development environment"
 ################################
 
 cd ${PROJECT_PATH}/app/start
 echo -e '<?php\n' > ${ENV_NAME}.php
 
 ################################
-# register providers via start file (see https://github.com/laravel/framework/issues/1603#issuecomment-21864164)
+echo "register providers via start file (see https://github.com/laravel/framework/issues/1603#issuecomment-21864164)"
 ################################
 
 echo "App::register('Way\\Generators\\GeneratorsServiceProvider');" >> ${ENV_NAME}.php
@@ -77,19 +75,7 @@ echo -e '\n' >> ${ENV_NAME}.php
 # echo "\$loader->alias('Profiler', 'Profiler\\Facades\\Profiler');" >> ${ENV_NAME}.php
 
 ################################
-# publish packages configs
-################################
-
-cd ${PROJECT_PATH}
-
-php artisan debugbar:publish
-php artisan config:publish barryvdh/laravel-ide-helper --env="${ENV_NAME}"
-php artisan config:publish barryvdh/laravel-debugbar
-php artisan config:publish anahkiasen/former
-php artisan deploy:ignite
-
-################################
-# set up environment detection
+echo "set up environment detection"
 ################################
 
 cd ${PROJECT_PATH}/bootstrap
@@ -97,6 +83,26 @@ sed -i "s/'your-machine-name'/'${ENV_NAME}'/" ./start.php
 if [ $ENV_NAME != 'local' ]; then
     sed -i "s/'local'/'${ENV_NAME}'/" ./start.php
 fi
+
+################################
+echo "install all this stuff"
+################################
+
+cd ${PROJECT_PATH}
+composer install --prefer-source
+
+################################
+echo "publish packages configs"
+################################
+
+php artisan key:generate
+php artisan debugbar:publish
+php artisan config:publish barryvdh/laravel-ide-helper --env="${ENV_NAME}"
+php artisan config:publish barryvdh/laravel-debugbar
+php artisan config:publish anahkiasen/former
+php artisan deploy:ignite
+
+
 
 ################################
 # generate IDE helper

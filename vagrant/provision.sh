@@ -74,7 +74,7 @@ then
     then
         ${SCRIPTS}/laravel_set_db.sh $PROJECT_PATH $ENV_NAME $DATABASE_TYPE $DATABASE_NAME $DATABASE_ROOT_PASSWORD
     fi
-    ${SCRIPTS}/laravel_packages.sh $PROJECT_PATH $ENV_NAME
+    ${SCRIPTS}/laravel_setup.sh $PROJECT_PATH $ENV_NAME
 else
     ${SCRIPTS}/laravel_migrate.sh $PROJECT_PATH $ENV_NAME
 fi
