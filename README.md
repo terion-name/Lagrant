@@ -97,7 +97,7 @@ If you faced any error — feel free to open [an issue](https://github.com/terio
 
 ###Application
 * basic bower config
-* basic grunt config
+* basic gulp config
 * build scripts (artisan commands)
 * and bunch of cool Laravel Packages (research in progress)
  
