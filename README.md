@@ -4,7 +4,7 @@ Boilerplate Laravel Vagrant config with autosetup.
 
 **Makes an isolated local development featured environment and installs Laravel with dev-packages OR runs exisisting one.**
 ```
-Status: Release Candidate
+Status: Stable
 ```
 ##Requirements
 * [Vagrant](http://www.vagrantup.com/)
