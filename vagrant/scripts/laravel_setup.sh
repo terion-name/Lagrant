@@ -88,8 +88,23 @@ fi
 echo "install all this stuff"
 ################################
 
+# synced folders are extremely slow
+# and installation process on HDD disks simply hangs because of this
+# so lets install deps out of synced folder to improve performance and then move them in place
+
 cd ${PROJECT_PATH}
+mkdir /tmp/laravel-install
+cp composer.json /tmp/laravel-install/composer.json
+cd /tmp/laravel-install
 composer install --prefer-source
+mv composer.lock ${PROJECT_PATH}/
+mv vendor/ ${PROJECT_PATH}/
+cd ${PROJECT_PATH}
+rm -r /tmp/laravel-install
+composer dump-autoload
+php artisan clear-compiled
+php artisan optimize
+
 
 ################################
 echo "publish packages configs"
@@ -100,7 +115,9 @@ php artisan debugbar:publish
 php artisan config:publish barryvdh/laravel-ide-helper --env="${ENV_NAME}"
 php artisan config:publish barryvdh/laravel-debugbar
 php artisan config:publish anahkiasen/former
-php artisan deploy:ignite
+
+# ignite is interactive and needs additional setup
+# php artisan deploy:ignite
 
 
 
