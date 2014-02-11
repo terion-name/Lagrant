@@ -96,11 +96,11 @@ cd ${PROJECT_PATH}
 mkdir /tmp/laravel-install
 cp composer.json /tmp/laravel-install/composer.json
 cd /tmp/laravel-install
-composer install --prefer-source
+composer install --prefer-source --no-scripts
 mv composer.lock ${PROJECT_PATH}/
 mv vendor/ ${PROJECT_PATH}/
 cd ${PROJECT_PATH}
-rm -r /tmp/laravel-install
+rm -rf /tmp/laravel-install
 composer dump-autoload
 php artisan clear-compiled
 php artisan optimize
