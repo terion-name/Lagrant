@@ -15,3 +15,7 @@ php artisan key:generate
 
 mkdir ${PROJECT_PATH}/app/config/${ENV_NAME}
 cp ${PROJECT_PATH}/vagrant/templates/laravel_config_app.stub ${PROJECT_PATH}/app/config/${ENV_NAME}/app.php
+
+wget https://github.com/laravel/envoy/raw/master/envoy.phar
+sudo mv envoy.phar /usr/local/bin/envoy
+chmod +x /usr/local/bin/envoy
