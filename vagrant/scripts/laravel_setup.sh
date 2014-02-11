@@ -98,7 +98,7 @@ cp composer.json /tmp/laravel-install/composer.json
 cd /tmp/laravel-install
 composer install --prefer-source --no-scripts
 mv composer.lock ${PROJECT_PATH}/
-mv vendor/ ${PROJECT_PATH}/
+cp -R -f vendor/ ${PROJECT_PATH}/
 cd ${PROJECT_PATH}
 rm -rf /tmp/laravel-install
 composer dump-autoload
@@ -116,13 +116,13 @@ php artisan config:publish barryvdh/laravel-ide-helper --env="${ENV_NAME}"
 php artisan config:publish barryvdh/laravel-debugbar
 php artisan config:publish anahkiasen/former
 
-# ignite is interactive and needs additional setup
+# ignite is interactive and needs manual setup
 # php artisan deploy:ignite
 
 
 
 ################################
-# generate IDE helper
+echo generate IDE helper
 ################################
 
 cd ${PROJECT_PATH}
