@@ -47,7 +47,9 @@ ${SCRIPTS}/ruby.sh
 
 ${SCRIPTS}/imagick.sh
 
-${SCRIPTS}/ffmpeg.sh
+# FFMpeg needs to be compiled, it takes a lot of time
+# So uncomment ffmpeg installer if you really need it
+# ${SCRIPTS}/ffmpeg.sh
 
 ${SCRIPTS}/xdebug.sh
 

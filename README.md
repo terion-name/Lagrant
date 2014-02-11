@@ -54,7 +54,7 @@ Lagrant will load Ubuntu 12 x64 VM with following components:
 * [ruby](https://www.ruby-lang.org)
 * [DART](https://www.dartlang.org)
 * [imagick](http://php.net/imagick) or [gmagick](http://www.php.net/manual/en/book.gmagick.php) (imagick by default)
-* [ffmpeg](http://www.ffmpeg.org/)
+* [ffmpeg](http://www.ffmpeg.org/) **commented by default!**
 * [xdebug](http://xdebug.org/)
 * [phpunit](http://phpunit.de/)
 * [composer](http://getcomposer.org/)
