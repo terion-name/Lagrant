@@ -47,6 +47,8 @@ ${SCRIPTS}/ruby.sh
 
 ${SCRIPTS}/imagick.sh
 
+${SCRIPTS}/ffmpeg.sh
+
 ${SCRIPTS}/xdebug.sh
 
 ${SCRIPTS}/phpunit.sh
