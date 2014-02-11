@@ -1,18 +1,5 @@
 #!/usr/bin/env bash
 
-# TODO!
-# mariadb
-# postgresql
-# xhprof
-# ruby
-# bower
-# grunt
-# less
-# YUI compressor
-# coffeescript
-# DART
-# apache
-
 SCRIPTS=/vagrant/vagrant/scripts
 PROJECT_PATH=/vagrant
 
