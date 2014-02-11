@@ -103,4 +103,4 @@ If you faced any error — feel free to open [an issue](https://github.com/terio
 * and bunch of cool Laravel Packages (research in progress)
  
 ##Thanx
-Thanx to [Jeffrey Way](https://github.com/JeffreyWay) for inspiring
+Thanx to [Jeffrey Way](https://github.com/JeffreyWay) for inspiring and ofcourse to [Taylor Otwell](https://github.com/taylorotwell) for such awesome and stunning framework
