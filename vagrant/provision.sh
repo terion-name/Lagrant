@@ -39,6 +39,8 @@ ${SCRIPTS}/phantomjs.sh
 
 ${SCRIPTS}/less.sh
 
+${SCRIPTS}/sass.sh
+
 ${SCRIPTS}/coffeescript.sh
 
 ${SCRIPTS}/dart.sh
