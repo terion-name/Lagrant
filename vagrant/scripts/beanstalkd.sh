@@ -3,7 +3,7 @@
 # MUST BE INSTALLED AFTER NGINX
 
 echo "--- Installing Beanstalkd ---"
-sudo apt-get install beanstalkd
+sudo apt-get install -y beanstalkd
 
 echo "--- Installing Beanstalk Console ---"
 
