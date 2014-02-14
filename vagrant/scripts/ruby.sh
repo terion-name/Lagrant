@@ -8,3 +8,4 @@ rvm requirements
 rvm install ruby
 rvm use ruby --default
 rvm rubygems current
+sudo gem install rake
