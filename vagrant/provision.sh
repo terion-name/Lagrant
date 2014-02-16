@@ -19,7 +19,13 @@ ${SCRIPTS}/nginx.sh
 
 ${SCRIPTS}/documentroot.sh
 
+${SCRIPTS}/memcached.sh
+
+${SCRIPTS}/ruby.sh
+
 ${SCRIPTS}/${DATABASE_TYPE}.sh $DATABASE_ROOT_PASSWORD
+
+${SCRIPTS}/sqlite.sh
 
 ${SCRIPTS}/redis.sh
 
@@ -45,8 +51,6 @@ ${SCRIPTS}/coffeescript.sh
 
 ${SCRIPTS}/dart.sh
 
-${SCRIPTS}/ruby.sh
-
 ${SCRIPTS}/imagick.sh
 
 # FFMpeg needs to be compiled, it takes a lot of time
@@ -60,6 +64,8 @@ ${SCRIPTS}/phpunit.sh
 ${SCRIPTS}/composer.sh
 
 ${SCRIPTS}/beanstalkd.sh
+
+${SCRIPTS}/supervisor.sh
 
 if [ -n "$DATABASE_NAME" ];
 then

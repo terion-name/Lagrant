@@ -9,6 +9,7 @@ VAGRANTFILE_API_VERSION = "2"
 ###########################
 
 # What DB server we should install?
+# variants: mysql, mariadb, postgresql
 DATABASE_TYPE = 'mysql'
 DATABASE_ROOT_PASSWORD = 'root'
 
