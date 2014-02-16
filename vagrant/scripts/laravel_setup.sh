@@ -11,9 +11,7 @@ echp "update composer.json"
 
 cd ${PROJECT_PATH}
 
-# while package-installer is not compatible with L4.1, comment it
-# composer require --no-update rtablada/package-installer:dev-master
-
+composer require --no-update rtablada/package-installer:dev-master
 composer require --no-update barryvdh/laravel-debugbar:1.* pda/pheanstalk:dev-master anahkiasen/rocketeer:dev-master anahkiasen/former:dev-master
 composer require --dev --no-update way/generators:dev-master way/laravel-test-helpers:dev-master barryvdh/laravel-ide-helper:1.*
 composer require --dev --no-update fzaninotto/faker:dev-master codeception/codeception:* phpunit/phpunit=3.7.*
@@ -37,10 +35,7 @@ echo "setting serviceProviders"
 
 REPLACE_ANCHOR="'Illuminate\\\Workbench\\\WorkbenchServiceProvider',"
 
-# while package-installer is not compatible with L4.1, comment it
-# REPLACE_STR=$REPLACE_ANCHOR"\n\n        'Barryvdh\\\Debugbar\\\ServiceProvider',\n\n        'Rtablada\\\PackageInstaller\\\PackageInstallerServiceProvider',"
-
-REPLACE_STR=$REPLACE_ANCHOR"\n\n        'Barryvdh\\\Debugbar\\\ServiceProvider',\n\n        'Rocketeer\\\RocketeerServiceProvider',\n\n        'Former\\\FormerServiceProvider',"
+REPLACE_STR=$REPLACE_ANCHOR"\n\n        'Barryvdh\\\Debugbar\\\ServiceProvider',\n\n        'Rtablada\\\PackageInstaller\\\PackageInstallerServiceProvider',\n\n        'Rocketeer\\\RocketeerServiceProvider',\n\n        'Former\\\FormerServiceProvider',"
 sed -i "s/$REPLACE_ANCHOR/$REPLACE_STR/" app.php
 
 ################################
