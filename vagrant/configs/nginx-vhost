@@ -8,12 +8,13 @@ server {
 
         index index.php index.html;
 
-        if (!-d $request_filename) {
-                rewrite ^/(.+)/$ $scheme://$http_host/$1 permanent;
-        }
+        #if (!-d $request_filename) {
+        #        rewrite ^/(.+)/$ $scheme://$http_host/$1 permanent;
+        #}
 
         location / {
-                try_files $uri $uri/ /index.php?q=$uri&$args;
+                #try_files $uri $uri/ /index.php?q=$uri&$args;
+                index index.php index.html index.htm;
         }
 
         error_page 404 /index.php;
