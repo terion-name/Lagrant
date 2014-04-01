@@ -13,7 +13,7 @@ sudo add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ saucy-updates 
 sudo apt-get update
 
 # Get the Dependencies
-sudo apt-get -y install autoconf automake build-essential git libass-dev libgpac-dev \
+sudo apt-get -y install autoconf automake build-essential git libgpac-dev \
   libsdl1.2-dev libtheora-dev libtool libva-dev libvdpau-dev libvorbis-dev libx11-dev \
   libxext-dev libxfixes-dev pkg-config texi2html zlib1g-dev
 
@@ -24,7 +24,7 @@ cd ~/ffmpeg_sources
 wget http://www.tortall.net/projects/yasm/releases/yasm-1.2.0.tar.gz
 tar xzvf yasm-1.2.0.tar.gz
 cd yasm-1.2.0
-./configure --prefix="$HOME/ffmpeg_build" --bindir="$HOME/bin"
+sudo ./configure --prefix="$HOME/ffmpeg_build" --bindir="$HOME/bin"
 sudo make
 sudo make install
 sudo make distclean
@@ -34,7 +34,7 @@ sudo make distclean
 cd ~/ffmpeg_sources
 git clone --depth 1 git://git.videolan.org/x264.git
 cd x264
-./configure --prefix="$HOME/ffmpeg_build" --bindir="$HOME/bin" --enable-static
+sudo ./configure --prefix="$HOME/ffmpeg_build" --bindir="$HOME/bin" --enable-static
 sudo make
 sudo make install
 sudo make distclean
@@ -44,19 +44,19 @@ cd ~/ffmpeg_sources
 git clone --depth 1 git://git.code.sf.net/p/opencore-amr/fdk-aac
 cd fdk-aac
 autoreconf -fiv
-./configure --prefix="$HOME/ffmpeg_build" --disable-shared
+sudo ./configure --prefix="$HOME/ffmpeg_build" --disable-shared
 sudo make
 sudo make install
 sudo make distclean
 
 # libmp3lame
-sudo apt-get install libmp3lame-dev
+sudo apt-get -y install libmp3lame-dev
 
 # libvpx
 cd ~/ffmpeg_sources
 git clone --depth 1 http://git.chromium.org/webm/libvpx.git
 cd libvpx
-./configure --prefix="$HOME/ffmpeg_build" --disable-examples
+sudo ./configure --prefix="$HOME/ffmpeg_build" --disable-examples
 sudo make
 sudo make install
 sudo make clean
@@ -80,4 +80,4 @@ sudo make distclean
 hash -r
 . ~/.profile
 
-yes | sudo cp -rf ~/ffmpeg_sources/ffmpeg/ffmpeg /usr/bin/ffmpeg
+# yes | sudo cp -rf ~/ffmpeg_sources/ffmpeg/ffmpeg /usr/bin/ffmpeg
