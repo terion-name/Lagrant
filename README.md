@@ -14,7 +14,9 @@ Status: Stable
 ###Basic usage
 Open terminal, go to desired directory and type in:
 ```bash
-git clone https://github.com/terion-name/Lagrant && mv Lagrant/* ./ && rm -r -f Lagrant && vagrant up
+git clone https://github.com/terion-name/Lagrant && mv Lagrant/* ./ && rm -r -f Lagrant
+mv provision.[small|medium|full].sh provision.sh
+vagrant up
 ```
 Or just clone/download Lagrant, edit Vagrantfile's variables and/or provision.sh to your prefers and run ```vagrant up```
 
