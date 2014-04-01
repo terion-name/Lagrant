@@ -14,7 +14,7 @@ Status: Stable
 ###Basic usage
 Open terminal, go to desired directory and type in:
 ```bash
-git clone https://github.com/terion-name/Lagrant && mv Lagrant/* ./ && rm -r -f Lagrant
+git clone https://github.com/yaapis/Lagrant && mv Lagrant/* ./ && rm -r -f Lagrant
 mv provision.[small|medium|full].sh provision.sh
 vagrant up
 ```
