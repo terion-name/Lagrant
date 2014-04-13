@@ -19,7 +19,7 @@ git clone https://github.com/terion-name/Lagrant && mv Lagrant/* ./ && rm -r -f 
 Or just clone/download Lagrant, edit Vagrantfile's variables and/or provision.sh to your prefers and run ```vagrant up```
 
 And go have some coffee.
-When the script will finish it's work open [http://localhost:8080](http://localhost:8080) or http://33.33.33.33 and you'll see Laravel welcome page.
+When the script will finish its work open [http://localhost:8080](http://localhost:8080) or http://33.33.33.33 and you'll see Laravel welcome page.
 Enjoy!
 
 **This will also work with existing project!**
