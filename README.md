@@ -36,6 +36,7 @@ To connect to your databases (mysql, mongo, etc) in VM via clients use connectio
 ![mongohub](http://img822.imageshack.us/img822/1064/bp6h.png)
 
 ##What's in the box
+####To remove features that you don't need simply comment out or remove corresponding lines in `vagrant/provision.sh`
 Lagrant will load Ubuntu 12 x64 VM with following components:
 * [php 5.5](http://php.net)
 * [nginx](http://nginx.org/) as a default web-server
