@@ -11,7 +11,7 @@ sudo /etc/init.d/mongodb start
 
 echo "--- MongoDB PHP extension ---"
 sudo apt-get install libsasl2-dev
-sudo pecl install mongo -y
+sudo yes | pecl install mongo
 sudo echo "extension=mongo.so" > /etc/php5/fpm/conf.d/mongodb.ini
 sudo echo "extension=mongo.so" > /etc/php5/cli/conf.d/mongodb.ini
 # sudo sh -c 'echo "extension=mongo.so" >> /etc/php5/fpm/php.ini'
