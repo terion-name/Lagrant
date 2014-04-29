@@ -31,7 +31,7 @@ If you're not happy with my defaults, fork the repo, edit variables in the begin
 ###Using VM resources
 To use shipped resources (such as composer, phpunit, etc) open terminal in project directory and type ```vagrant ssh```. Then ```cd /vagrant``` and you are in project root in the VM. Files are seamlessly synced, so all your changes in VM will immediatly appear in host filesystem.
 
-To connect to your databases (mysql, mongo, etc) in VM via clients use connection over SSH tunnel. SSH host will be 33.33.33.33, user and password — vagrant. Like this:
+To connect to your databases (mysql, mongo, etc) in VM via clients use connection over SSH tunnel. SSH host will be 10.10.10.10, user and password — vagrant. Like this:
 
 ![mongohub](https://photos-2.dropbox.com/t/0/AADXf8_TGzKgs7bI2_RHhvbGtIQUK03myJBlgwd6MxAQxw/12/10936637/png/2048x1536/3/1398765600/0/2/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%202014-04-29%2011.28.47.png/S4VfLd1xll8Z_TuN-sm9tAxGq0pW6Tx2FgMAvxvk4QE)
 
