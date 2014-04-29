@@ -19,7 +19,7 @@ git clone https://github.com/terion-name/Lagrant && mv Lagrant/* ./ && rm -r -f 
 Or just clone/download Lagrant, edit Vagrantfile's variables and/or provision.sh to your prefers and run ```vagrant up```
 
 And go have some coffee.
-When the script will finish its work open [http://localhost:8080](http://localhost:8080) or http://33.33.33.33 and you'll see Laravel welcome page.
+When the script will finish its work open [http://localhost:8080](http://localhost:8080) or http://10.10.10.10 and you'll see Laravel welcome page.
 Enjoy!
 
 **This will also work with existing project!**
@@ -33,7 +33,7 @@ To use shipped resources (such as composer, phpunit, etc) open terminal in proje
 
 To connect to your databases (mysql, mongo, etc) in VM via clients use connection over SSH tunnel. SSH host will be 33.33.33.33, user and password — vagrant. Like this:
 
-![mongohub](http://img822.imageshack.us/img822/1064/bp6h.png)
+![mongohub](https://photos-2.dropbox.com/t/0/AADXf8_TGzKgs7bI2_RHhvbGtIQUK03myJBlgwd6MxAQxw/12/10936637/png/2048x1536/3/1398765600/0/2/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%202014-04-29%2011.28.47.png/S4VfLd1xll8Z_TuN-sm9tAxGq0pW6Tx2FgMAvxvk4QE)
 
 ##What's in the box
 ####To remove features that you don't need simply comment out or remove corresponding lines in `vagrant/provision.sh`

@@ -31,7 +31,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     config.vm.box_url = "http://files.vagrantup.com/precise64.box"
 
-    config.vm.network "private_network", ip: "33.33.33.33"
+    config.vm.network "private_network", ip: "10.10.10.10"
 
     config.vm.network :forwarded_port, guest: 80, host: 8080
 
