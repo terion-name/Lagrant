@@ -13,3 +13,5 @@ sed -i "s/disable_functions/;disable_functions/" /etc/php5/cli/php.ini
 ############
 # SPL Types http://www.php.net/manual/en/intro.spl-types.php
 sudo pecl install SPL_Types
+sudo echo "extension=spl_types.so" >> /etc/php5/fpm/php.ini
+sudo echo "extension=spl_types.so" >> /etc/php5/cli/php.ini
