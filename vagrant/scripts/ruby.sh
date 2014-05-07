@@ -2,10 +2,14 @@
 
 echo "--- Installing Ruby ---"
 
-sudo \curl -L https://get.rvm.io | bash -s stable
-source ~/.rvm/scripts/rvm
-rvm requirements
-rvm install ruby
+sudo \curl -sSL https://get.rvm.io | bash -s stable
+
+source /usr/local/rvm/scripts/rvm
+
+source /etc/profile.d/rvm.sh
+
+sudo rvm requirements
+sudo rvm install ruby
 rvm use ruby --default
 rvm rubygems current
-sudo gem install rake
+sudo gem install -f rake
