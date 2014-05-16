@@ -3,6 +3,8 @@ server {
         sendfile off;
 
         server_name _;
+        
+        client_max_body_size 100m;
 
         root /var/www/public;
 
