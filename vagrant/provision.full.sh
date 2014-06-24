@@ -25,6 +25,8 @@ ${SCRIPTS}/ruby.sh
 
 ${SCRIPTS}/${DATABASE_TYPE}.sh $DATABASE_ROOT_PASSWORD
 
+${SCRIPTS}/phpmyadmin.sh $DATABASE_ROOT_PASSWORD
+
 ${SCRIPTS}/sqlite.sh
 
 ${SCRIPTS}/redis.sh
