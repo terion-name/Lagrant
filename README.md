@@ -55,6 +55,7 @@ Lagrant will load Ubuntu 12 x64 VM with following components:
 * [sass](http://sass-lang.com/) with [compass](http://compass-style.org/)
 * [coffeescript](http://coffeescript.org/)
 * [DART](https://www.dartlang.org)
+* [Java Runtime](http://java.com/)
 * [imagick](http://php.net/imagick) or [gmagick](http://www.php.net/manual/en/book.gmagick.php) (imagick by default)
 * [ffmpeg](http://www.ffmpeg.org/) **commented by default!**
 * [xdebug](http://xdebug.org/)

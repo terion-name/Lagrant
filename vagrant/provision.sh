@@ -51,6 +51,8 @@ ${SCRIPTS}/coffeescript.sh
 
 ${SCRIPTS}/dart.sh
 
+${SCRIPTS}/java.sh
+
 ${SCRIPTS}/imagick.sh
 
 # FFMpeg needs to be compiled, it takes a lot of time
