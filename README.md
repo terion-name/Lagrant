@@ -50,7 +50,7 @@ Lagrant will load Ubuntu 12 x64 VM with following components:
 * [gulp](http://gulpjs.com/)
 * [gulp-autoprefixer](https://npmjs.org/package/gulp-autoprefixer)
 * [phantomjs](http://phantomjs.org/)
-* [ruby](https://www.ruby-lang.org) with [rake](http://rake.rubyforge.org/)
+* [ruby](https://www.ruby-lang.org) with [rake](http://rake.rubyforge.org/) and [bundler](http://bundler.io/)
 * [less](http://lesscss.org/)
 * [sass](http://sass-lang.com/) with [compass](http://compass-style.org/)
 * [coffeescript](http://coffeescript.org/)
