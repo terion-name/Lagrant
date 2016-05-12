@@ -6,7 +6,7 @@ ENV_NAME=$2
 echo "--- Add Laravel dev packcages ---"
 
 ################################
-echp "update composer.json"
+echo "update composer.json"
 ################################
 
 cd ${PROJECT_PATH}
